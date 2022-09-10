@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+}
+
+apply from: "$rootDir/gradle/script/main.gradle"
+apply from: "$rootDir/gradle/script/main.dependencies.gradle"
+apply from: "$rootDir/gradle/script/main.module.gradle"
+
+
+android {
+    defaultConfig {
+        applicationId AppConfig.appCustomerId
+        minSdk AppConfig.minSdk
+        targetSdk AppConfig.targetSdk
+        versionCode Releases.customerVersionCode
+        versionName Releases.customerVersionName
+
+        testInstrumentationRunner AppConfig.testInstrumentationRunner
+    }
+}
+
+dependencies {
+    implementation project(":shared:core")
+}

@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "HayuJek"
+include ':application:customer'
+include ':application:driver'
+include ':features:general:authentication'
+include ':features:customer:search'
+include ':shared:core'
+include ':shared:utils'
+include ':shared:network'
